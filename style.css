@@ -1,2 +1,60 @@
 @import "./normalize.css";
 
+body {
+    font-family: "Roboto"; font-size: 1rem;
+    background-color: rgb(219, 217, 231);
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar content";
+    height: 100vh;
+}
+
+/* #region SIDEBAR */
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    font-size: 1.3rem;
+    background-color: skyblue;
+    padding: 32px;
+}
+
+.dashboard {
+    font-size: 1.5rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+/* #endregion */
+
+/* #region HEADER */
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "search profile"
+        "greeting buttons";
+}
+
+
+
+/* #endregion */
+
+/* #region MAIN */
+.main {
+    grid-area: main;
+}
+/* #endregion */
