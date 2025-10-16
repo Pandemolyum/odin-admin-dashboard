@@ -5,6 +5,10 @@ body {
     background-color: rgb(219, 217, 231);
 }
 
+img {
+    display: inline-block;
+    margin-right: 1rem;
+}
 
 .container {
     display: grid;
@@ -12,7 +16,7 @@ body {
     grid-template-rows: 1fr 4fr;
     grid-template-areas: 
         "sidebar header"
-        "sidebar content";
+        "sidebar main";
     height: 100vh;
 }
 
@@ -21,20 +25,21 @@ body {
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 2rem;
     font-size: 1.3rem;
     background-color: skyblue;
-    padding: 32px;
+    padding: 2rem;
 }
 
 .dashboard {
     font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .options {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
 }
 /* #endregion */
 
@@ -44,17 +49,56 @@ body {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-        "search profile"
-        "greeting buttons";
+    background-color: #fff;
 }
 
-
+.greeting {
+    display: flex;
+}
 
 /* #endregion */
 
 /* #region MAIN */
 .main {
     grid-area: main;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "projects announcements"
+        "projects trending";
 }
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.project {
+    background-color: #fff;
+}
+
+.title {
+    font-weight: 500;
+}
+
+.announcements-list {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.trending {
+
+}
+
 /* #endregion */
